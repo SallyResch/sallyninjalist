@@ -1,3 +1,4 @@
+
 const Details = () => {
   return (
     <div>
