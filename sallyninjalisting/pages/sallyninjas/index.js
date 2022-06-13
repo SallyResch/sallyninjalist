@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link';
 import styles from '../../styles/Ninjas.module.css'
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -22,11 +23,11 @@ const Ninjas = ({ sallys }) => {
       <div>
         <h1>All ninjas</h1>
         {sallys.map(sally => (
-          <div key={sally.id}>
+          <Link href={'/sallyninjas/' + sally.id} key={sally.id}>
             <a className={styles.single}>
               <h3>{sally.name}</h3>
             </a>
-          </div>
+          </Link>
         ))}
       </div>
     </>
